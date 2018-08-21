@@ -1,0 +1,4 @@
+struct Component
+{
+	GameObject* GetOwningObject();
+}
