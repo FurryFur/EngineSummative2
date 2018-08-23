@@ -15,8 +15,6 @@ public:
 
 	void TickAllSystems();
 
-	
-
 private:
 	GameObject[MaxGameObjects] gameObjects;
 	std::vector<System> systems;
