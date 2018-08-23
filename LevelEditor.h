@@ -1,5 +1,8 @@
-class
+class LevelEditor : public Level
 {
+	// Setup UIButtons
+	LevelEditor();
+
 	Level* level;
 	EGameObjectType selectedTile;
 
@@ -7,6 +10,10 @@ class
 	// Tiles will be automatically snapped to grid.
 	void placeTileAtLocation(int x, int y);
 	void removeTileAtLocation(int x, int y);
+
+	// Editor ticks editor systems and also ticks level using
+	// the render system so no in game behaviors run.
+	virtual void tickAllSystems() override;
 
 	void save(std::string path);
 	void load(std::string path);

@@ -3,6 +3,25 @@ struct Component
 	GameObject* GetOwningObject();
 }
 
+struct Position : public Component
+{
+	int x;
+	int y;
+}
+
+struct Input : public Component
+{
+	int padIndex;
+	bool up;
+	bool down;
+	bool left;
+	bool right;
+	bool start;
+	bool select;
+	bool b;
+	bool a;
+}
+
 struct ContactInfo
 {
 	vec2 contactNormal;
@@ -22,13 +41,11 @@ struct UIMenuButton : public Component
 {
 	bool selected;
 
-	Level* nextScreen;
-
-	// Links to other menu items
-	UIMenuButton* up;
-	UIMenuButton* down;
-	UIMenuButton* leff;
-	UIMenuButton* right;
+	std::function<void()> upCallback();
+	std::function<void()> downCallback();
+	std::function<void()> leftCallback();
+	std::function<void()> rightCallback();
+	std::function<void()> pressedCallback();
 }
 
 // Singleton component

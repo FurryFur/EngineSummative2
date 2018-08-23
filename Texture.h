@@ -10,6 +10,8 @@ struct Texture
 {
 	std::vector<Color> data;
 	Color getPixel(int row, int column);
+
+	loadTexture(std::string path);
 }
 
 struct TextureView
