@@ -1,9 +1,6 @@
 class Level
 {
 public:
-	static const int gridWidth;
-	static const int gridHeight;
-
 	// Returns an iterator over all game objects
 	GameObjectIter getGameObjects();
 
@@ -17,6 +14,8 @@ public:
 	void AddSystem(T system);
 
 	void TickAllSystems();
+
+	
 
 private:
 	GameObject[MaxGameObjects] gameObjects;

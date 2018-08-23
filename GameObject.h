@@ -5,10 +5,10 @@ public:
 
 	GameObject* getParent();
 
-	// Gets a pointer to the component of type T.
-	// If this object does not have the specified component, then return nullptr.
+	// Returns a list of components with the specified type.
+	// If this object does not have the specified component, then return an empty vector.
 	template<typename T>
-	Component<T>* getComponent();
+	std::vector<Component<T>*> getComponents();
 
 	// Adds a component of type T to the game object.
 	// Components should all have default constructors.

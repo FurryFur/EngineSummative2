@@ -31,6 +31,14 @@ class SpatialPartitioningSystem : public System
 
 class AudioSystem : public System
 {
-	// Handles playing sounds queued up in the audio component
+	// Handles playing audio associated with an audio component.
+	// Audio components will be updated with current playback position and isPlaying status.
 	virtual void tick(float deltaTime) override; 
 }
+
+class AnimationSystem : public System
+{
+	// Flips sprite frames
+	virtual void tick(float deltaTime) override; 
+}
+

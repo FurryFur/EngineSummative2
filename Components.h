@@ -22,6 +22,8 @@ struct UIMenuButton : public Component
 {
 	bool selected;
 
+	Level* nextScreen;
+
 	// Links to other menu items
 	UIMenuButton* up;
 	UIMenuButton* down;
@@ -41,4 +43,29 @@ struct LookupByPosition : public Component
 {
 	// Current position in the spatial partition data structure.
 	SpatialPartitionNode* spatialPartitionNode;
+}
+
+struct AudioComponent : public Component
+{
+public:
+	AudioComponent();
+	AudioComponent(const std::string& audioFile);
+
+	void playAudio(); // Play from current position
+	void pauseAudio();
+	void stopAudio(); // Stop playback and reset playback position to start
+	void setIsLooping(bool isLooping);
+	bool getIsLooping();
+	void setPlaybackPosition(float playbackPosition);
+	float getPlaybackPosition();
+	void playFromStart();
+
+	void loadData(const std::string& audioFile);
+
+	std::vector<float> audioData;
+
+private:
+	bool isPlaying;
+	bool isLooping;
+	float playbackPosition;
 }
