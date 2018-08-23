@@ -82,12 +82,23 @@ public:
 	float getPlaybackPosition();
 	void playFromStart();
 
-	void loadData(const std::string& audioFile);
-
-	std::vector<float> audioData;
+	void loadAudio(const std::string& audioFile);
 
 private:
 	bool isPlaying;
 	bool isLooping;
 	float playbackPosition;
+
+	AudioHandle audio;
+
+	friend class AudioSystem;
 }
+
+struct LevelEditor : public Component
+{
+	Level* level;
+	EGameObjectBrushType selectedBrush;
+
+	// Position for selected game object type to be placed at on button press
+	vec2 cursorPosition;
+};

@@ -48,3 +48,16 @@ class AnimationSystem : public System
 	virtual void tick(Level*, float deltaTime) override; 
 }
 
+class LevelEditorSystem : public System
+{
+	// Updates the editor systems.
+	// Also ticks render system on currently open level to 
+	// display the current state of the level being edited.
+	virtual void tick(Level*, float deltaTime) override;
+
+	// Place tile at the specified location in the level.
+	// Tiles will be automatically snapped to grid.
+	void placeTileAtLocation(Level*, int x, int y);
+	void removeTileAtLocation(Level*, int x, int y);
+};
+
