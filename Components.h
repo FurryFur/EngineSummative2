@@ -39,6 +39,9 @@ struct Collision : public Component
 
 struct UIMenuButton : public Component
 {
+	Text text;
+	Sprite sprite;
+
 	bool selected;
 
 	std::function<void()> upCallback();
