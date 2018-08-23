@@ -7,4 +7,5 @@ struct Sprite : public Component
 	int width;  // Used for scaling and collision
 	int height; // Used for scaling and collision
 	float animationSpeed;
+	bool isRendered;
 }
