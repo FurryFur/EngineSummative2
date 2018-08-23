@@ -54,6 +54,8 @@ public:
 	void playAudio(); // Play from current position
 	void pauseAudio();
 	void stopAudio(); // Stop playback and reset playback position to start
+	bool getIsPlaying();
+	void setIsPlaying(bool isPlaying);
 	void setIsLooping(bool isLooping);
 	bool getIsLooping();
 	void setPlaybackPosition(float playbackPosition);
