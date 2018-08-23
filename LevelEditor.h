@@ -6,6 +6,9 @@ class LevelEditor : public Level
 	Level* level;
 	EGameObjectType selectedTile;
 
+	// Position for selected tile to be placed at on button press
+	vec2 cursorPosition;
+
 	// Place tile at the specified location in the level.
 	// Tiles will be automatically snapped to grid.
 	void placeTileAtLocation(int x, int y);
